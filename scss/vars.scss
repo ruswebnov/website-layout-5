@@ -1,0 +1,98 @@
+$accentDark: #25333c;
+$accentGray: #f3f3f3;
+$btnColor: #e93b3b;
+$redText: #e93b3b;
+$whiteText: #ffffff;
+$blackText: #3a3a3a;
+$BGcolorForm: #d4d1d4;
+$footerColor: #25333c;
+
+
+
+@mixin headerInfoText($fs:14px, $lh:18px, $fw:400, $color:#ffffff){
+  a{
+    font-size: $fs;
+    line-height: $lh;
+    font-weight: $fw;
+    color: $color;
+    &:hover{
+      text-decoration: underline;
+    }
+  }
+}
+
+@mixin headerNav($fs:14px, $lh:18px, $fw:800, $color:#fff){
+    font-size: $fs;
+    line-height: $lh;
+    font-weight: $fw;
+    color: $color;
+    text-transform: uppercase;
+}
+
+
+@mixin standartText($fs:14px, $lh:18px, $fw:400, $color:#25333c){
+  font-size: $fs;
+  line-height: $lh;
+  font-weight: $fw;
+  color: $color;
+}
+
+@mixin mediumText($fs:16px, $lh:23px, $fw:700, $color:#25333c){
+  font-size: $fs;
+  line-height: $lh;
+  font-weight: $fw;
+  color: $color;
+}
+
+@mixin bigText ($fs:24px, $lh:30px, $fw:600, $color:#25333c) {
+  font-size: $fs;
+  line-height: $lh;
+  font-weight: $fw;
+  color: $color;
+}
+
+
+
+@mixin sectionTitle($fs:30px, $lh:23px, $fw:400, $color:#25333c, $mb:20px, $tAling: center){
+  font-size: $fs;
+  line-height: $lh;
+  font-weight: $fw;
+  color: $color;
+  margin-bottom: $mb;
+  text-align: $tAling;
+}
+
+@mixin sectionSubtitle($fs:19px, $lh:27px, $fw:400, $color:#25333c, $mb:35px, $fw:300, $tAling: center){
+  font-size: $fs;
+  line-height: $lh;
+  font-weight: $fw;
+  color: $color;
+  margin-bottom: $mb;
+  font-weight: $fw;
+  text-align: $tAling;
+}
+
+@mixin btn($padding:20px 35px, $bgcolor:#e93b3b, $bradius:4px){
+  padding: $padding;
+  background-color: $bgcolor;
+  border-radius: $bradius;
+}
+
+@mixin paddingSection($padding: 50px 0){
+  padding: $padding;
+  
+}
+
+@mixin btnLink($padding:15px 20px, $brdr: 1px solid #e93b3b, $bradius: 4px, $fw: 600,$textTr: uppercase){
+  padding: $padding;
+  border: $brdr;
+  color: $btnColor;
+  border-radius: $bradius;
+  text-transform: $textTr;
+  transition: 0.5s;
+  &:hover{
+    background-color: $btnColor;
+    color: $whiteText;
+  }
+  
+}
