@@ -1,3 +1,5 @@
+@import "libs";
+@import "vars";
 *,
 *::before,
 *::after{
@@ -37,4 +39,63 @@ body{
   padding: 0 15px;
   position: relative;
   z-index: 3;
+}
+
+/* =========================HOLDER SECTION============================ */
+.holder__section{
+  background-image: url(../image/holder-section/agent/backgr.jpg);
+  width: 100%;
+  min-height: 340px;
+  height: 100%;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  position: relative;
+  z-index: 0;
+  text-align: center;
+  &::before{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(#414141, 0.3);
+    z-index: 1;
+  }
+}
+.holder__section--2{
+  background-image: url(../image/holder-section/manager/backg.jpg);
+}
+.holder__section--3{
+  background-image: url(../image/holder-section/personal-manager/backgr.jpg);
+}
+.holder__section--4{
+  background-image: url(../image/holder-section/location/backgr.jpg);
+}
+.holder__section-title {
+  @include sectionTitle($color: $whiteText);
+}
+.holder__section-text {
+  @include mediumText($fs:19px, $lh:23px, $fw:300, $color:$whiteText);
+  max-width: 940px;
+  width: 100%;
+}
+.holder__wrapper{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  min-height: 340px;
+  padding: 10px;
+}
+.holder__circle{
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  border: 1px solid #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 25px;
 }

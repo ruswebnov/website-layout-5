@@ -53,7 +53,7 @@ $footerColor: #25333c;
 
 
 
-@mixin sectionTitle($fs:30px, $lh:23px, $fw:400, $color:#25333c, $mb:20px, $tAling: center){
+@mixin sectionTitle($fs:30px, $lh:23px, $fw:400, $color:#25333c, $mb:40px, $tAling: center){
   font-size: $fs;
   line-height: $lh;
   font-weight: $fw;
