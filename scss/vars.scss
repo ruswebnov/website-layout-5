@@ -1,3 +1,4 @@
+// Variables 
 $accentDark: #25333c;
 $accentGray: #f3f3f3;
 $btnColor: #e93b3b;
@@ -8,7 +9,8 @@ $BGcolorForm: #d4d1d4;
 $footerColor: #25333c;
 
 
-
+//MIXINS
+//MIXIN texts
 @mixin headerInfoText($fs:14px, $lh:18px, $fw:400, $color:#ffffff){
   a{
     font-size: $fs;
@@ -52,7 +54,7 @@ $footerColor: #25333c;
 }
 
 
-
+//MIXIN SECTION
 @mixin sectionTitle($fs:30px, $lh:23px, $fw:400, $color:#25333c, $mb:40px, $tAling: center){
   font-size: $fs;
   line-height: $lh;
@@ -72,15 +74,20 @@ $footerColor: #25333c;
   text-align: $tAling;
 }
 
+
+// MIXIN BUTTONS
 @mixin btn($padding:20px 35px, $bgcolor:#e93b3b, $bradius:4px){
   padding: $padding;
   background-color: $bgcolor;
   border-radius: $bradius;
+  transition: 0.3s;
+  &:hover{
+    background-color: #d40000;
+  }
 }
 
 @mixin paddingSection($padding: 50px 0){
-  padding: $padding;
-  
+  padding: $padding; 
 }
 
 @mixin btnLink($padding:15px 20px, $brdr: 1px solid #e93b3b, $bradius: 4px, $fw: 600,$textTr: uppercase){

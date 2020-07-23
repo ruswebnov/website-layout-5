@@ -38,6 +38,11 @@
   border: 1px solid #fff;
   text-transform: uppercase;
   background-color: transparent;
+  transition: 0.3s;
+  &:hover{
+    background-color: $accentGray;
+    color: $blackText;
+  }
 }
 .header__info-inner{
   display: grid;
@@ -130,11 +135,18 @@
 }
 .header__nav-list{
   grid-area: navigation;
-  a{
-    @include headerNav;
-  }
   display: flex;
   justify-content: space-between;
+  transition: 0.7s;
+  a{
+    @include headerNav;
+    &:hover{
+      color: #d1d1d1;
+    }
+  }
+}
+.header__nav-item{
+  padding: 10px;
 }
 .header__logo-title{
   font-size: 27px;
@@ -161,6 +173,7 @@
     }
   }
 }
+
 .header__title{
   font-size: 48px;
   line-height: 24px;
@@ -254,6 +267,60 @@
 /* =========================CALCULATOR========================= */
 .calculator{
   @include paddingSection;
+}
+.calculator__inner{
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  flex-wrap: wrap;
+  margin-bottom: 30px;
+}
+.select__title{
+  @include mediumText;
+  margin-bottom: 5px;
+}
+.calculator__item{
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  flex: 0 0 260px;
+}
+select{
+  max-width: 265px;
+  width: 100%;
+  padding: 20px;
+  cursor: pointer;
+  z-index: 1;
+  font-family: inherit;
+  border-color: $accentDark;
+}
+.input_box{
+  margin-bottom: 20px;
+  input{
+    height: 50px;
+    margin: 0 5px 20px 5px;
+  }
+  .select__title{
+    margin-bottom: 15px;
+  }
+  label{
+    p{
+      display: inline-block;
+    }
+  }
+}
+.input__box-profile {
+  margin-right: 25px;
+  input{
+    max-width: 70px;
+    width: 100%;
+  }
+}
+.input__box-weight,.input__box-volume {
+  input{
+    max-width: 90px;
+    width: 100%;
+  }
 }
 
 
@@ -472,12 +539,12 @@
 
 .holder__circle--red{
   border-color: $btnColor;
-  margin-bottom: 27px;
 }
 .delivery-methods__check{
   text-align: center;
   border-color: $btnColor;
   position: relative;
+  padding: 20px;
 }
 .check__input{
   width: 250px;
@@ -487,7 +554,6 @@
 }
 .btn--check{
   position: absolute;
-  bottom: -10%;
   left: 50%;
   transform: translateX(-50%);
 }
@@ -778,26 +844,19 @@
 
 
 /* mobile.menu */
-.mobile__burger {
+.mobile__burger-btn {
   display: none;
-  position: relative;
+  position: absolute;
   width: 30px;
   height: 30px;
-  left: 96%;
-  top: -57px;
+  right: 0;
+  top: 15px;
   transform: translateX(-50%);
   cursor: pointer;
-  z-index: 5;
-}
-.mobile__burger-btn {
-  width: 30px;
-  height: 3px;
-  position: absolute;
-  background-color: #fff;
-  top: 0;
-  left: 0;
   border: none;
   outline: none;
+  z-index: 5;
+  background-color: transparent;
   &::before{
     content: '';
     position: absolute;
@@ -806,6 +865,7 @@
     top: 10px;
     left: 0;
     background-color: #fff;
+    transition: 0.5s;
   }
   &::after{
     content: '';
@@ -815,9 +875,30 @@
     top: 20px;
     left: 0;
     background-color: #fff;
+    transition: 0.5s;
   } 
+  span{
+    position: absolute;
+    width: 30px;
+    height: 3px;
+    top: 0;
+    left: 0;
+    background-color: #fff;
+  }
 }
-
+.active.mobile__burger-btn{
+  &::before{
+    transform: rotate(45deg);
+  }
+  &::after{
+    transform: translate(0px,-10px)rotate(-45deg);
+  }
+  span{
+    display: none;
+  }
+ 
+ 
+}
 
 
 @import 'media';

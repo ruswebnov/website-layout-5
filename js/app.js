@@ -15,17 +15,9 @@ $(document).ready(function(){
 
 
 
-
-
  $('.mobile__burger-btn').on('click', function() {
    $(this).toggleClass('active');
-
-   if($('.header__nav-list').css('display') == 'none') {
-     $('.header__nav-list').slideDown();
-   }
-   else {
-     $('.header__nav-list').slideToggle();
-   }
+   $('.header__nav-list').toggleClass('active');
  })
 
 });
